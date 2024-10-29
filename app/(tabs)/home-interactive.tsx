@@ -1,12 +1,15 @@
 import React from "react";
 import "../../global.css"
-import Card from "@/components/card";
+import { Alert, Button, ScrollView, View } from "react-native";
+import Card from '../../components/card';
+import { TextHeader } from "../../components/TextHeader";
+import ExamCard from "@/components/ExamCard";
 
+export default function HomeInteractive() {
 
-export default function HomeScreen() {
   return (
     <>
-    {/* TOP BAR */}
+      {/* TOP BAR */}
       <div className="bg-white p-2">
         <div className="flex justify-between items-center">
           <svg xmlns="http://www.w3.org/2000/svg" 
@@ -28,21 +31,34 @@ export default function HomeScreen() {
           </svg>
         </div>
       </div>
+          
+      {/* EXAM CARD */}
+      <ExamCard />
 
       {/* CARD */}
-      <Card/>
-      <Card/>
-      <Card/>
-
+      <TextHeader text="Materiais" />
+      <ScrollView>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </ScrollView>
       {/* MAIN CONTAINER */}
+      
       <div className="">
-        <h2 className="text-2xl font-bold p-4">Atalhos</h2>
+        <TextHeader text="Atalho1" />
+        <h3 className="">A</h3>
+        <h3 className="">B</h3>
+        <h3 className="">C</h3>
+        <h3 className="">D</h3>
       </div>
       <div className="">
-        <h2 className="text-2xl font-bold p-4">Atalhos</h2>
-      </div>
-      <div className="">
-        <h2 className="text-2xl font-bold p-4">Atalhos</h2>
+      <TextHeader text="Atalho2" />
+        <h3>A</h3>
+        <h3>B</h3>
+        <h3>C</h3>
+        <h3>D</h3>
       </div>
     </>
   );
